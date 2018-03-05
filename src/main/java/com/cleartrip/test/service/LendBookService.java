@@ -27,7 +27,7 @@ public class LendBookService {
         BookEntity bookE = bookService.getBookEntity(bid);
 
         if (nonNull(userE)) {
-            if (  userE.getBid().size() <= MAX_BORROW_SIZE) {
+            if (userE.getBid().size() <= MAX_BORROW_SIZE) {
                 if (nonNull(bookE) && bookE.getCount() > 0) {
 //                           update user info
                     userService.updateUser(userE.getEmailId(), userE, bookE.getName());
@@ -40,8 +40,8 @@ public class LendBookService {
             } else {
                 System.out.println(" User reached to max limit");
             }
-        }else {
-        System.out.println(" User must add in the system");
+        } else {
+            System.out.println(" User must add in the system");
         }
     }
 }
