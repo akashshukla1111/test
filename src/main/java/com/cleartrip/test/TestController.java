@@ -51,13 +51,10 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/user/{uid}/books")
     public void lendBooks(@PathVariable("uid") String uid, @PathParam("book") String book) {
-
-        System.out.println(uid);
-        System.out.println(book);
         lendBookService.lendBook(uid, book);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/book/{bid}")
+    @RequestMapping(method = RequestMethod.GET, value = "/book/{bid}/{uid}")
     public void returnBook(@PathVariable("bid") String bid,@PathVariable("uid") String uid) {
         bookService.updateBookReturn(bid,uid);
     }

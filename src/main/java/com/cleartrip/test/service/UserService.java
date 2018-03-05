@@ -26,8 +26,8 @@ public class UserService {
              if(isUserNotPresent(user.getEmailId())){
 
                  UserEntity userEntity = mapUserToUserEntity(user);
+                 userEntity.setBid(new ArrayList<>());
                  userMap.put(user.getEmailId().trim().toLowerCase(),userEntity);
-
                  return TRUE;
              }
 
